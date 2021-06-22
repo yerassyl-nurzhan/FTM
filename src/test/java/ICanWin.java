@@ -17,17 +17,17 @@ public class ICanWin {
         WebElement pasteExpiration = driver.findElement(By.xpath("//*[@id='select2-postform-expiration-container']"));
         pasteExpiration.click();
 
-        new WebDriverWait(driver, 10)
-                .until(ExpectedConditions
-                        .presenceOfElementLocated(By.xpath("//*[@class='select2-results__option']")));
-
-        WebElement pasteExpiration10Min = driver.findElement(By.xpath("//*[@class='select2-results__option']"));
+        WebElement pasteExpiration10Min = driver.findElement(By.xpath("(//*[@class='select2-results__option'])[2]"));
         pasteExpiration10Min.click();
 
         WebElement pasteName = driver.findElement(By.xpath("//*[@id='postform-name']"));
         pasteName.sendKeys("helloweb");
 
+        Thread.sleep(2000);
+
         WebElement pasteCreate = driver.findElement(By.xpath("//*[@class='btn -big']"));
         pasteCreate.click();
+
+
     }
 }
